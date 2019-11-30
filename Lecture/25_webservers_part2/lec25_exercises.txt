@@ -1,0 +1,67 @@
+Name(s):
+Oceane Andreis
+Deanne A
+Musaab A
+//./build/messenger
+
+Link: http://cs1200-web.cs.colorado.edu:8080
+
+-----------------------------------------
+Exploring the API (look at messenger.cpp)
+-----------------------------------------
+
+1. What endpoints are available? What kind of requests do they accept?
+What url parameters can they take? What format should the data be in for each endpoint?
+Chatrooms(Takes GET, its parameters are nothing), createroom(takes POST, its parameters are string, the data should be plain text ), message(Takes POST, its parameters are string name, string room, string message , the data should be in json) are available endpoints.
+
+
+
+--------------------------------------------------------------------------
+Using curl, do the following tasks. Copy+paste the commands you used below
+--------------------------------------------------------------------------
+-i (--include) include the HTTP-header in the output
+-X (--request) specifies what kind of request to make
+-d (--data) specifies what data to send along with your request
+-H (--header) specifies a header to send along with the request
+
+1. Get a list of available chat rooms
+curl -i -X GET http://localhost:8080/chatrooms
+
+
+2. Create a new chat room
+curl -i -X POST http://cs1200-web.cs.colorado.edu:8080/createroom -d The3Amigos
+
+
+3. Post a message in a chat room
+hint: when POSTing JSON, you'll need to include the header "Content-Type: application/json"
+hint2: when formatting your JSON, format it like: "{'field1': 'value1', 'field2': 'value2'}"
+
+curl -i -X POST http://cs1200-web.cs.colorado.edu:8080/message -d '{"name": "Deanne","room": "The3Amigos","message": "Hello world"}' --header "Content-type: application/json"
+
+4. Display the contents of a chat room
+http://cs1200-web.cs.colorado.edu:8080/chatrooms?room=The3Amigos
+
+--------------------------------------------------------------------------
+Using a browser extension such as Postman, HttpRequester, Insomnia, etc...
+--------------------------------------------------------------------------
+
+Do tasks 1 - 4, using the browser extension of your choice.
+Put this in body to create a new chat room -d The3Amigos2
+
+What are advantages/disadvantages of using curl versus the extension that you used?
+With the extension, writting post is easier with the JSON
+
+
+-------------------------
+Improving our web service
+-------------------------
+Take the provided code and modify messenger.cpp.
+
+The steps for building are the same as for Simple-Web-Server (https://gitlab.com/eidheim/Simple-Web-Server.git)
+
+
+1. Make it so that if a user tries to create a room that already exists, that room isn't re-created. Copy + paste your modified /createroom endpoint here.
+
+
+
+2. Add more endpoints of your own. Copy & paste the code that you've added here.

@@ -1,0 +1,205 @@
+Name: Oceane Andreis
+
+Turn this file in on canvas before the end of class.
+
+This review is meant to be a check-in with yourself. Which of the topics are you confident about? Which are you less confident about? What do you need to review?
+
+For each question, answer without looking at the internet, then compare answers with your table-mates and your notes.
+
+
+Section 1: c++
+---------
+1. What is a reference? What is a pointer? How are they different?
+A reference is an alias for a variable.
+A pointer points to a variable in memory.
+
+Reference affects it directly and pointer makes a copy of it and affect that copy.
+
+2. Given the following class definition, how would you call the method CalculateMysteries?
+Foo one;
+one CalculateMysteries;
+
+class Foo {
+public:
+    Foo(int bar) : bar_(bar) {}
+
+    int CalculateMysteries();
+
+    static int TotalBars();
+
+private:
+    int bar_;
+
+    static int baz_;
+};
+
+3. How would you call the method TotalBars()?
+
+Foo::TotalBars();
+
+
+
+4. Can you access the field bar_ from inside the method TotalBars()? Why/why not?
+
+No, because we can call TotalBars on its own without creating an instance of the class which would then lead to not be
+able to access Foo's private variable
+
+5. Can you access the field baz_ from inside the method CalculateMysteries()? Why/why not?
+
+Yes, because baz_ is static
+
+6. Create a Foo reference, then call one of the Foo methods.
+
+Foo fun;
+Foo &three = fun;
+three.CalculateMysteries;
+
+
+7. Create a Foo pointer, then call one of the Foo methods.
+
+Foo *four = new Foo();
+four.CalculateMysteries;
+
+8. Why would you make a field a pointer?
+
+so you could access a field outside of its scope
+
+Section 2: Good Coding Practices
+-----------
+
+1. How would you improve the following code block:
+
+bool hasACat = true;
+
+If (hasACat != true) {
+
+}
+
+returnItForADog();
+
+
+//original
+If (hasACat == true) {
+// Do nothing.
+} else{
+returnItForADog();
+]
+
+2. How would you improve the following code block:
+//original
+int x = 3;
+int y = 5;
+
+if(y > x) {
+    cout << “We’re messing with numbers!” << endl;
+    x += 1;
+} else if(x > y) {
+    cout << “We’re messing with numbers!” << endl;
+    y += 1;
+} else if(x == y) {
+    cout << “We’re messing with numbers!” << endl;
+    x  = x + y;
+}
+//new
+
+int x = 3;
+int y = 5;
+
+if(y > x) {
+
+    x += 1;
+} else if(x > y) {
+
+    y += 1;
+} else if(x == y) {
+    x+=y;
+}
+cout << “We’re messing with numbers!” << endl;
+
+Section 3: keywords/const/overloading
+------------
+
+1. Why would you use a const field? Why would you use a const method?
+
+You would want a const field if you weren't planning on changing the variable.
+A const method would be used if you didn't want to change any variables
+
+2. Where do you instantiate a const field in a class?
+(As opposed to a static field and/or a regular field)
+
+In the .h file, in the class, in the private field.
+
+3. Where and why would you use the “virtual” keyword? What is this concept called and why is it important?
+You would use virtual so a subclass could access the methods at the lowest level (derived's class method).
+Virtual will make it sure that the subclass picks not its class function
+(for example(pseudocode)
+class foo()
+virtual do()
+)
+class Bar(is a sublcass)
+do();(the virtual keyword will make sure bar pick this do)
+)
+Dynamic dispatch
+
+4. Why would you need to overload a comparison operator?
+
+
+5. What is one thing about inheritance that you wish that you knew better?
+
+Section 4: Version control & git
+----------
+1. What is a branch? Why would you work on a non-master branch?
+
+A branch depending if it's a local or remote branch is a copy of your master branch.
+You would want to work on a non-master branch so people can all work on the same file and work on their own part and
+then later on merge the edits to master.
+
+2. If you are currently working on the branch my-fabulous-feature and your teammate merges another feature into master, what are the commands that you would run to switch to master, get the new code, switch back to your branch, and merge the new code from master into your branch?
+
+
+3. What is the difference between issuing a "git pull" and submitting a "pull request"?
+
+
+4. When you're reviewing a PR, what are 3 different specific things that you should look for in the code that you're reviewing?
+
+
+
+Section 5: bash
+------------
+1. What is a PS1 in general (what does this control)?
+
+
+
+2. Rate your level of comfort working on the command line on a scale from "not comfortable at all" to "completely comfortable, I am a command line master". Be honest with yourself. What are a few things that you wish you were more comfortable with on the command line?
+
+
+
+3. If you are developing in an IDE (such as Sublime, CodeRunner, CodeBlocks, XCode, etc) and your project isn't compiling by pressing the "run/build" button, what are two things that you could do to fix the issue? (Imagine that a friend is having this issue and you are explaining a few things that they could do to figure out what is going on).
+
+
+
+Section 6: Unit testing/Catch2
+------------
+1. What is a TEST_CASE? What is a SECTION? What should each be used for? How many methods should be tested in each TEST_CASE? what about each SECTION?
+
+
+Section 7: Design Patterns
+----------
+1. For each of the following design patterns, briefly describe what problem they solve and how they are implemented in c++.
+
+a. Singleton
+
+
+b. Flyweight
+
+
+c. Prototype
+
+
+d. Factory
+
+
+e. Iterator
+
+
+2. In class, we went over how you will frequently interact with the design pattern Iterator but will rarely implement it yourselves. Why is this?

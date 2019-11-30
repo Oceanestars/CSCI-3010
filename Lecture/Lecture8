@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+//#include "catch.hpp"
+using namespace std;
+int Sum(std::vector<int> nums){
+
+    int sum = 0;
+
+    for(int i =0; i<nums.size(); i++)
+    {
+        sum+=nums[i];
+    }
+    return sum;
+
+
+}
+int main()
+{
+    vector<int> nums = {0,1,2,3,4,10};
+    vector<int> nums2 = {2,3,4,10};
+    vector<int> nums3 = {200,10};
+    //cout<<Sum(nums);
+    nums3.push_back(10);
+    cout<<Sum(nums3);
+
+TEST_CASE("Test Addition", "[vector]")
+{
+  SECTION("Test with different numbers") {
+      REQUIRE(Sum(nums) == "20");
+      REQUIRE(Sum(nums2) == "19");
+      REQUIRE(Sum(nums3) == "210");
+
+  }
+
+  SECTION("Test addind new number and then add") {
+      num3.push_back(10);
+      REQUIRE(Sum(nums2) == "220");
+
+      }
+  }
+
+}
+    return 0;
+}

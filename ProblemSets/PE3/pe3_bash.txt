@@ -1,0 +1,68 @@
+Problem Set 3
+Bash reference
+Oceane Andreis
+
+1.What is the bash command to show your terminal's working directory (current location)?
+
+	Pwd - bash command to print working directory
+
+2.How would you create an empty file called empty.txt from the command line?
+
+	touch empty.txt
+
+3.Using the ls command, how would you list all files beginning with empty in your current directory?
+
+	ls empty*
+
+4.Using the ls command, the wc command, and the |, how would you count the number of files ending in .txt in your current directory?
+
+	ls *txt | wc -l
+
+5.Using the echo command and > or >>, what is the command to write your name to empty.txt? What is the difference between > and >>?
+
+	Both > and >> create a file if it doesn’t exist. echo “I love sushi” > empty.txt will overwrite the file, hence delete the text that already there and echo “I love sushi” >> empty.txt will append to what already exists.
+
+6.What is the bash command to rename that file to notempty.txt?
+
+	mv empty.txt notempty.tx
+
+7.What is the bash command to create a directory named pe3_bash?
+
+	mkdir  pe3_bas
+
+8.What is the command to move your terminal's working directory to pe3_bash?
+
+	cd pe3_bash
+
+9.From the pe3_bash directory, how would you create a new directory, pe3_bash_number2 that has the same parent directory as pe3_bash?
+
+	mkdir -p ~/ pe3_bash/pe3_bash_number2  - if pe3_bash doesn’t exist
+
+	If you are in the pe3_bash directory then the command is mkdir -p pe3_bash_number2
+
+10.What is the command to move from pe3_bash to pe3_bash_number2 (use only one command)?
+
+	cd pe3_bash_number2
+
+11.What does pressing the up arrow key do?
+
+	Goes back in the history of commands
+
+12.What does pressing the down arrow key do?
+
+	Goes forward in the history of commands
+
+13.What does pressing ctrl+r do?
+
+	With ctrl+r you can search the previous cmd by typing letters
+
+14.What are two different command-line based text editors (text editors that run from the command line and do not open a separate application)? (Answer the following questions for each editor that you have chosen.)
+	Vim & Vi
+a.What command do you use to open a file with this editor?
+	vim filename
+b.What command do you use to save a file while using this editor?
+	esc:w
+c.What command do you use to exit this editor?
+	esc:q
+15.What are two different reasons you might want to use the text editors listed above?
+	It’s easier and faster to edit
